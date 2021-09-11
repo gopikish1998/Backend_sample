@@ -4,7 +4,7 @@ const app = express();
 const mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
 const url = "mongodb://localhost:27017/todo_app"
-
+const PORT = process.env.PORT || 3000;
 
 app.use(cors({
     origin:"*"
@@ -124,6 +124,6 @@ app.delete('/delete-task/:id',async (req,res)=>{
 //     }
 // })
 
-app.listen(3000,function(){
-    console.log(`The app is listening in the port 3000`)
+app.listen(PORT,function(){
+    console.log(`The app is listening in the port ${PORT}`)
 })
