@@ -26,7 +26,13 @@ app.get("/list-all-todo",async function(req,res){
         })}
     // res.json(tasks)
 })
-
+app.post("/register", async function(req,res){
+    try {
+        
+    } catch (error) {
+        
+    }
+})
 app.post("/create-task",async function(req,res){
     try {
         let client=await mongoClient.connect(url);//connect db
