@@ -3,8 +3,9 @@ const cors = require("cors");
 const app = express();
 const mongodb = require("mongodb");
 const mongoClient = mongodb.MongoClient;
-const url = "mongodb+srv://gopi:gopi123@cluster0.85u0c.mongodb.net?retryWrites=true&w=majority"
-const PORT = process.env.PORT || 3000;
+const url = "mongodb+srv://gopi:Gopi123@cluster0.85u0c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+// const url="mongodb://localhost:27017"
+const PORT = process.env.PORT || 3002;
 
 app.use(cors({
     origin:"*"
@@ -43,6 +44,7 @@ app.post("/create-task",async function(req,res){
             message:"task created"
         })
     } catch (error) {
+        console.log(error)
         res.status(500).json({
             message:"Something went wrong"
         })
